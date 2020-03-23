@@ -13,7 +13,7 @@ import {Error} from "./features/scaled/Error";
 import {Warning} from "./features/scaled/Warning";
 import {BlueOrange} from "./features/custom/BlueOrange";
 import {EmptyConfig} from "./features/broken/EmptyConfig";
-import {OverloadedConfig} from "./features/broken/OverloadedConfig";
+import {OverloadedConfig, OverloadedConfigAgain} from "./features/broken/OverloadedConfig";
 
 const GridWrapper = styled.div`
   display: flex;
@@ -69,9 +69,9 @@ function App() {
 
           <EmptyConfig />
           <div />
-          <div />
-          <div />
           <OverloadedConfig />
+          <div />
+          <OverloadedConfigAgain />
 
         </Grid>
       </GridWrapper>
