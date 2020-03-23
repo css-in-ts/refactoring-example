@@ -1,31 +1,81 @@
-import React, { FC } from 'react';
-import {Button} from './Button'
+import React from 'react';
 import styled from "styled-components";
+import {FixedDark} from "./features/fixed/FixedDark";
+import {FixedLight} from "./features/fixed/FixedLight";
+import {FixedDarkLight} from "./features/fixed/FixedDarkLight";
+import {FixedLightDark} from "./features/fixed/FixedLightDark";
+import {Divider} from "./components/Divider";
+import {makeColor} from "./utils/makeColor";
+import {Primary} from "./features/scaled/Primary";
+import {Secondary} from "./features/scaled/Secondary";
+import {Accent} from "./features/scaled/Accent";
+import {Error} from "./features/scaled/Error";
+import {Warning} from "./features/scaled/Warning";
+import {BlueOrange} from "./features/custom/BlueOrange";
+import {EmptyConfig} from "./features/broken/EmptyConfig";
+import {OverloadedConfig} from "./features/broken/OverloadedConfig";
 
-const GridWrapper: FC = styled.div`
+const GridWrapper = styled.div`
   display: flex;
-  height: 100vh;
+  padding: 1rem 0;
   align-items: center;
   justify-content: center;
 `
 
-const Grid: FC = styled.div`
+const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-column-gap: 12px;
   grid-row-gap: 12px;
 `
 
+const Title  = styled.h1`
+  text-align: center;
+  font-size: 2rem;
+`
+
 function App() {
   return (
-    <GridWrapper>
-      <Grid>
-        <Button label="A Button!" styleType="primary" />
-        <Button label="Another One!" styleType="secondary" />
-        <Button label="Warning!" styleType="warning" />
-        <Button label="Error!" styleType="error" />
-      </Grid>
-    </GridWrapper>
+    <div>
+      <Title>Color Swatches</Title>
+      <GridWrapper>
+        <Grid>
+
+          <Divider content="Fixed" color={makeColor({ fixed: 'dark' })}/>
+
+          <FixedDark />
+          <FixedDarkLight />
+          <div />
+          <FixedLight />
+          <FixedLightDark />
+
+          <Divider content="Scaled" color={makeColor({ scalable: { color: 'primary' }})} />
+
+          <Primary />
+          <Secondary />
+          <Accent  />
+          <Error />
+          <Warning />
+
+          <Divider content="Custom" color={makeColor({ custom: '#EE0DE9' })} />
+
+          <div />
+          <div />
+          <BlueOrange />
+          <div />
+          <div />
+
+          <Divider content="Huh?" color={makeColor({ fixed: 'dark', custom: 'white' })} />
+
+          <EmptyConfig />
+          <div />
+          <div />
+          <div />
+          <OverloadedConfig />
+
+        </Grid>
+      </GridWrapper>
+    </div>
   );
 }
 
