@@ -1,6 +1,12 @@
 import {mix} from "polished";
 import {ColorFixed, ColorScalable} from "@css-in-ts/design-system/types/primitive/color.primitive";
-import {ColorBlendRatios, ColorHex, ColorProperties, ColorScales} from "@css-in-ts/design-system/types/composite";
+import {
+  ColorBlendRatios,
+  ColorHex,
+  ColorProperties,
+  ColorScalePosition,
+  ColorScales
+} from "@css-in-ts/design-system/types/composite";
 import {colorConfig} from "@css-in-ts/design-system/configs";
 
 type ColorMapScalable = { [key in ColorScalable]: ColorScales };
@@ -35,23 +41,35 @@ const fixedColorMap: ColorMapFixed = {
   dark: colorConfig.fixed.dark
 };
 
-export const makeColor = ({
-  fixed,
-  scalable,
-  custom
-}: ColorProperties): ColorHex => {
-  if (scalable?.color) {
-    return scalableColorMap[scalable.color][scalable.scale || 0];
+interface Fixed {
+  type: 'fixed',
+  color: ColorFixed
+}
+
+interface Scalable {
+  type: 'scalable',
+  color: ColorScalable,
+  scale?: ColorScalePosition
+}
+
+interface Custom {
+  type: 'custom',
+  color: ColorHex
+}
+
+type NewColorProperties = Fixed | Scalable | Custom
+
+export const makeColor = (config: NewColorProperties): ColorHex => {
+  switch (config.type) {
+    case 'fixed':
+      return fixedColorMap[config.color];
+    case 'scalable':
+      return scalableColorMap[config.color][config.scale || 0];
+    case 'custom':
+      console.warn(
+        "You're attempting to use a custom color that falls outside of the design system. This color will not be regulated by the design system any longer and thusly isn't type-safe. You'll be required to update this value manually for any subsequent changes. Use with cation."
+      );
+      console.log(config.color);
+      return config.color;
   }
-  if (fixed) {
-    return fixedColorMap[fixed];
-  }
-  if (custom) {
-    console.warn(
-      "You're attempting to use a custom color that falls outside of the design system. This color will not be regulated by the design system any longer and thusly isn't type-safe. You'll be required to update this value manually for any subsequent changes. Use with cation."
-    );
-    console.log(custom);
-    return custom;
-  }
-  return "";
 };
