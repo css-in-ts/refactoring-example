@@ -4,8 +4,8 @@ import {makeColor} from "../../utils/makeColor";
 
 export const FixedLightDark: FC = () => {
 
-  const fill = makeColor({ fixed: 'light' })
-  const border = makeColor({ fixed: 'dark' })
+  const fill = makeColor({ type: 'fixed', color: 'light' })
+  const border = makeColor({ type: 'fixed', color: 'dark' })
 
   return <Swatch fill={fill} border={border} />
 

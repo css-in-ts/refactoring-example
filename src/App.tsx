@@ -39,20 +39,20 @@ function App() {
   return (
     <div>
       <Title>
-        <span style={{ color: makeColor({ scalable: { color: 'secondary', scale: 1 } })}}>Hey </span>
-        <span style={{ color: makeColor({ scalable: { color: 'secondary' } })}}>Chariot</span>
-        <span style={{ color: makeColor({ scalable: { color: 'secondary', scale: 3 } })}}>...</span>
-        <span style={{ color: makeColor({ scalable: { color: 'primary' } })}}>I </span>
-        <span style={{ color: makeColor({ scalable: { color: 'primary', scale: 1 } })}}>Heard </span>
-        <span style={{ color: makeColor({ scalable: { color: 'primary', scale: 2 } })}}>You </span>
-        <span style={{ color: makeColor({ scalable: { color: 'primary', scale: 3 } })}}>Paint </span>
-        <span style={{ color: makeColor({ scalable: { color: 'error' } })}}>Houses</span>
-        <span style={{ color: makeColor({ scalable: { color: 'error', scale: 3 } })}}>...</span>
+        <span style={{ color: makeColor({ type: 'scalable', color: 'secondary', scale: 1 })}}>Hey </span>
+        <span style={{ color: makeColor({ type: 'scalable', color: 'secondary' })}}>Chariot</span>
+        <span style={{ color: makeColor({ type: 'scalable', color: 'secondary', scale: 3 })}}>...</span>
+        <span style={{ color: makeColor({ type: 'scalable', color: 'primary' })}}>I </span>
+        <span style={{ color: makeColor({ type: 'scalable', color: 'primary', scale: 1 })}}>Heard </span>
+        <span style={{ color: makeColor({ type: 'scalable', color: 'primary', scale: 2 })}}>You </span>
+        <span style={{ color: makeColor({ type: 'scalable', color: 'primary', scale: 3 })}}>Paint </span>
+        <span style={{ color: makeColor({ type: 'scalable', color: 'error' })}}>Houses</span>
+        <span style={{ color: makeColor({ type: 'scalable', color: 'error', scale: 3 })}}>...</span>
       </Title>
       <GridWrapper>
         <Grid>
 
-          <Divider content="Fixed" color={makeColor({ fixed: 'dark' })}/>
+          <Divider content="Fixed" color={makeColor({ type: 'fixed', color: 'dark' })}/>
 
           <FixedDark />
           <FixedDarkLight />
@@ -60,7 +60,7 @@ function App() {
           <FixedLight />
           <FixedLightDark />
 
-          <Divider content="Scaled" color={makeColor({ scalable: { color: 'primary' }})} />
+          <Divider content="Scaled" color={makeColor({type: 'scalable', color: 'primary' })} />
 
           <Primary />
           <Secondary />
@@ -68,7 +68,7 @@ function App() {
           <Error />
           <Warning />
 
-          <Divider content="Custom" color={makeColor({ custom: '#EE0DE9' })} />
+          <Divider content="Custom" color={makeColor({ type: 'custom', color: '#EE0DE9' })} />
 
           <div />
           <div />
@@ -76,7 +76,7 @@ function App() {
           <div />
           <div />
 
-          <Divider content="Huh?" color={makeColor({ fixed: 'dark', custom: 'white' })} />
+          <Divider content="Huh?" color={makeColor({ type:'fixed', color: 'dark' })} />
 
           <EmptyConfig />
           <div />

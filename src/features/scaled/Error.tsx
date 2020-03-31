@@ -4,8 +4,8 @@ import {makeColor} from "../../utils/makeColor";
 
 export const Error: FC = () => {
 
-  const fill = makeColor({ scalable: { color: 'error', scale: 3 } })
-  const border = makeColor({ scalable: { color: 'error' } })
+  const fill = makeColor({ type: 'scalable', color: 'error', scale: 3 })
+  const border = makeColor({ type: 'scalable', color: 'error' })
 
   return <Swatch fill={fill} border={border} />
 

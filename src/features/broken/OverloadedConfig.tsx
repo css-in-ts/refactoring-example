@@ -4,8 +4,8 @@ import {makeColor} from "../../utils/makeColor";
 
 export const OverloadedConfig: FC = () => {
 
-  const fill = makeColor({ scalable: { color: 'primary', scale: 1 }, fixed: 'dark' })
-  const border = makeColor({ fixed: 'light', custom: '#EE7D0F'})
+  const fill = makeColor({ type: 'scalable', color: 'primary', scale: 1 } )
+  const border = makeColor({ type: 'scalable', color: 'gray' })
 
   return <Swatch fill={fill} border={border} />
 
@@ -13,8 +13,8 @@ export const OverloadedConfig: FC = () => {
 
 export const OverloadedConfigAgain: FC = () => {
 
-  const fill = makeColor({ scalable: { color: 'primary', scale: 1 }, custom: '#0508EE' })
-  const border = makeColor({ fixed: 'light', custom: '#fffff'})
+  const fill = makeColor({ type: 'scalable', color: 'primary', scale: 1 })
+  const border = makeColor({ type: 'fixed', color: 'light' })
 
   return <Swatch fill={fill} border={border} />
 

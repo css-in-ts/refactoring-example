@@ -3,7 +3,7 @@ import {ColorHex} from "@css-in-ts/design-system/types/composite";
 import styled from "styled-components";
 import {makeColor} from "../utils/makeColor";
 
-const swatchBackground = makeColor({ custom: '#eeeeee'})
+const swatchBackground = makeColor({ type: 'custom', color: '#eeeeee'})
 
 const SwatchWrapper = styled.div`
   border-radius: 1rem;

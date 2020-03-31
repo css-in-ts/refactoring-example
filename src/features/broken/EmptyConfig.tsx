@@ -4,8 +4,8 @@ import {makeColor} from "../../utils/makeColor";
 
 export const EmptyConfig: FC = () => {
 
-  const fill = makeColor({})
-  const border = makeColor({})
+  const fill = makeColor({ type: 'scalable', color: 'primary' })
+  const border = makeColor({ type: 'scalable', color: 'secondary' })
 
   return <Swatch fill={fill} border={border} />
 
