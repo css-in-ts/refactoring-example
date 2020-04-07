@@ -1,7 +1,7 @@
-import { mix } from 'polished';
-import { ColorFixed, ColorScalable } from '@css-in-ts/design-system/types/primitive/color.primitive';
-import { ColorBlendRatios, ColorHex, ColorScalePosition, ColorScales } from '@css-in-ts/design-system/types/composite';
-import { colorConfig } from '@css-in-ts/design-system/configs';
+import {mix} from "polished";
+import {ColorFixed, ColorScalable} from "@css-in-ts/design-system/types/primitive/color.primitive";
+import {ColorBlendRatios, ColorHex, ColorScalePosition, ColorScales} from "@css-in-ts/design-system/types/composite";
+import {colorConfig} from "@css-in-ts/design-system/configs";
 
 type ColorMapScalable = { [key in ColorScalable]: ColorScales };
 type ColorMapFixed = { [key in ColorFixed]: ColorHex };
@@ -20,14 +20,14 @@ const createColorScale = (hex: ColorScalable): ColorScales => [
 ];
 
 const scalableColorMap: ColorMapScalable = {
-  primary: createColorScale('primary'),
-  secondary: createColorScale('secondary'),
-  accent: createColorScale('accent'),
-  gray: createColorScale('gray'),
-  light: createColorScale('light'),
-  success: createColorScale('success'),
-  warning: createColorScale('warning'),
-  error: createColorScale('error')
+  primary: createColorScale("primary"),
+  secondary: createColorScale("secondary"),
+  accent: createColorScale("accent"),
+  gray: createColorScale("gray"),
+  light: createColorScale("light"),
+  success: createColorScale("success"),
+  warning: createColorScale("warning"),
+  error: createColorScale("error")
 };
 
 const fixedColorMap: ColorMapFixed = {
@@ -61,7 +61,7 @@ export const makeColor = (config: NewColorProperties): ColorHex => {
       return scalableColorMap[config.color][config.scale || 0];
     case 'custom':
       console.warn(
-        'You\'re attempting to use a custom color that falls outside of the design system. This color will not be regulated by the design system any longer and thusly isn\'t type-safe. You\'ll be required to update this value manually for any subsequent changes. Use with cation.'
+        "You're attempting to use a custom color that falls outside of the design system. This color will not be regulated by the design system any longer and thusly isn't type-safe. You'll be required to update this value manually for any subsequent changes. Use with cation."
       );
       console.log(config.color);
       return config.color;
