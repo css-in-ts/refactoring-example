@@ -24,7 +24,7 @@ const Grid = styled.div`
 `
 
 const HeaderWrapper = styled.div`
-  text-align: center
+  text-align: center;
 `
 
 function App() {
