@@ -1,8 +1,8 @@
 import React from "react"
 import {makeColor} from "../utils/makeColor";
 
-const blue = makeColor({ type: 'scalable', color: 'secondary' })
-const green = makeColor({ type: "scalable", color: "primary" })
+const blue = makeColor({ scalable: { color: 'secondary' } })
+const green = makeColor({ scalable: { color: "primary" } })
 
 export const Header = () => (
   <svg

@@ -4,13 +4,13 @@ import {makeColor} from "../utils/makeColor";
 
 export const Broken = () => {
 
-  const black = makeColor({ type: "fixed", color: "dark" })
+  const black = makeColor({})
 
-  const white = makeColor({ type: 'fixed', color: 'light' })
+  const white = makeColor({})
 
-  const blue = makeColor({ type: 'scalable', color: 'secondary' })
+  const blue = makeColor({ custom: '#EE6C0D', fixed: 'dark' })
 
-  const green = makeColor({ type: 'scalable', color: 'primary' })
+  const green = makeColor({ custom: '#EE6C0D', fixed: 'light' })
 
   return (
     <>

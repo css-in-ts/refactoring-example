@@ -4,13 +4,13 @@ import {makeColor} from "../utils/makeColor";
 
 export const Basic = () => {
 
-  const black = makeColor({ type: "fixed", color: "dark" })
+  const black = makeColor({ fixed: "dark" })
 
-  const white = makeColor({ type: 'fixed', color: 'light' })
+  const white = makeColor({ fixed: "light" })
 
-  const blue = makeColor({ type: 'scalable', color: 'secondary' })
+  const blue = makeColor({ scalable: { color: 'secondary' } })
 
-  const green = makeColor({ type: 'scalable', color: 'primary' })
+  const green = makeColor({ scalable: { color: 'primary' } })
 
    return (
      <>
