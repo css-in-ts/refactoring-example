@@ -9,12 +9,12 @@ interface HorseProps {
 }
 
 export const Horse: FC<HorseProps> = ({
-  headFill,
-  headOutline,
-  maneFill,
-  maneOutline,
-  size = 150
-}) => (
+                                        headFill,
+                                        headOutline,
+                                        maneFill,
+                                        maneOutline,
+                                        size = 150
+                                      }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}

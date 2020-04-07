@@ -1,16 +1,16 @@
-import React from "react"
-import {Horse} from "../components/Horse";
-import {makeColor} from "../utils/makeColor";
+import React from 'react';
+import { Horse } from '../components/Horse';
+import { makeColor } from '../utils/makeColor';
 
 export const Broken = () => {
 
-  const black = makeColor({ type: "fixed", color: "dark"})
+  const black = makeColor({ type: 'fixed', color: 'dark' });
 
-  const white = makeColor({ type: "fixed", color: "light" })
+  const white = makeColor({ type: 'fixed', color: 'light' });
 
-  const blue = makeColor({ type: "scalable", color: "secondary" })
+  const blue = makeColor({ type: 'scalable', color: 'secondary' });
 
-  const orange = makeColor({ type: "custom", color: "#EE6C0D" })
+  const orange = makeColor({ type: 'custom', color: '#EE6C0D' });
 
   return (
     <>
@@ -49,5 +49,5 @@ export const Broken = () => {
         maneOutline={orange}
       />
     </>
-  )
-}
+  );
+};
