@@ -1,8 +1,8 @@
-import React from "react"
-import {makeColor} from "../utils/makeColor";
+import React from 'react';
+import { makeColor } from '../utils/makeColor';
 
-const blue = makeColor({ scalable: { color: 'secondary' } })
-const green = makeColor({ scalable: { color: "primary" } })
+const blue = makeColor({ scalable: { color: 'secondary' } });
+const green = makeColor({ scalable: { color: 'primary' } });
 
 export const Header = () => (
   <svg
@@ -112,4 +112,4 @@ export const Header = () => (
       d="M166.3974,43.4083a1.0558,1.0558,0,0,0-.5454-.4483,1.5765,1.5765,0,0,0-1.4058-.21l-.0424-.0225-.9112-.4619c-.3413,1.4121-1.3857,3.3984-4.3247,5.35a3.6935,3.6935,0,0,1,.0283,1.7813,2.2367,2.2367,0,0,1,.8843.1914c.835.8486,1.3994,1.06,1.9639.8906,1.5664-.083,4.1152-2.2969,4.1152-2.2969s.4912-1.3.6367-1.9l.0122.0108A3.2237,3.2237,0,0,0,166.3974,43.4083Zm-2.3892.8105c.14-.77,1.1832-.5654,1.9024-.3261.1133.1562.1987.4941-.2568,1.1191l-.7613.2822A.8059.8059,0,0,1,164.0082,44.2188Z"
     />
   </svg>
-)
+);

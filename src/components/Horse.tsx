@@ -1,11 +1,11 @@
-import React, {FC} from "react";
+import React, { FC } from 'react';
 
 interface HorseProps {
-    headFill: string;
-    headOutline: string;
-    maneFill: string;
-    maneOutline: string;
-    size?: string;
+  headFill: string;
+  headOutline: string;
+  maneFill: string;
+  maneOutline: string;
+  size?: string;
 }
 
 export const Horse: FC<HorseProps> = ({
